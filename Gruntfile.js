@@ -6,6 +6,7 @@ const sass = require('node-sass');
 module.exports = function (grunt) {
   // config
   grunt.initConfig({
+    // these prop names are the same as the word after grunt-contrib
     concat: {
       js: {
         // src: ['js/jquery-1.12.4.js', 'js/rslides.js', 'js/scripts.js'],    // specific files
@@ -27,12 +28,20 @@ module.exports = function (grunt) {
           'css/styles.css': 'css/sass/styles.scss'
         }
       }
+    },
+    uglify: {
+      my_target: {
+        files: {
+          'build/scripts.min.js': ['build/scripts.js']
+        }
+      }
     }
   });
 
   // load plugins
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   // grunt concat will run all within grunt concat init config (this is due to the plugin)
   // grunt sass will run the sass config
