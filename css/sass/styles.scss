@@ -1,3 +1,5 @@
+@import 'mixins';
+
 $base-color: #777;
 $second-color: #333;
 $heading-font: Arial;
@@ -18,4 +20,5 @@ $heading-font: Arial;
 
 .heading{
   font-family: $heading-font;
+  @include ninjalink ('blue', 'red', 'pink', 'purple')
 }
