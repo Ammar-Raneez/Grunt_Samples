@@ -35,6 +35,13 @@ module.exports = function (grunt) {
           'build/scripts.min.js': ['build/scripts.js']
         }
       }
+    },
+    cssmin: {
+      target: {
+        files: {
+          'build/styles.min.css': ['build/styles.css']
+        }
+      }
     }
   });
 
@@ -42,6 +49,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   // grunt concat will run all within grunt concat init config (this is due to the plugin)
   // grunt sass will run the sass config
